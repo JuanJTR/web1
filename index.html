@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 2</title>
+</head>
+
+<body>
+    <h1>Problemas básicos con Javascript</h1>
+    <div>
+        <h1>1</h1>
+        <div>
+            <p>JavaScript es un lenguaje de programación que los desarrolladores utilizan para hacer páginas web
+                interactivas.
+                Desde actualizar fuentes de paginas a mostrar animaciones y mapas interactivos, las funciones de
+                JavaScript
+                pueden mejorar la experiencia del usuario de un sitio web.
+            </p>
+
+            <p>
+                JavaScript y Java son dos lenguajes de programación distintos, aunque comparten algunas similitudes en
+                términos de
+                sintaxis y estructura de programación, por ejemplo:
+                en la programación orientada a objetos y ambos son usados en el desarrollo web
+            </p>
+        </div>
+
+        <div>
+            <h1>2</h1>
+            <h3>Operaciones Arítmeticas</h3>
+            <form method="post" onsubmit="SubmitCalc(); return false;">
+                <select name="operation" id="op">
+                    <option value="">Seleccione operación</option>
+                    <option value="sum">Suma</option>
+                    <option value="res">Resta</option>
+                    <option value="mul">Multiplicación</option>
+                    <option value="div">División</option>
+                </select>
+                <br>
+                <br>
+                <div>
+                    <input id="num1" type="number">
+                    <input id="num2" type="number">
+                </div>
+
+                <button type="submit" class="btn-calcular" value="math">Calcular</button>
+
+                <h1>3</h1>
+                <h3>Concatenacion de variables</h3>
+                <div>
+                    <input id="iput1" type="text">
+                    <input id="iput2" type="text">
+                    <button type="submit" class="btn-calcular" value="conc">Concatenar</button>
+                </div>
+                <h1>4</h1>
+                <h3>Tipo de dato de variables</h3>
+                <!-- <input id="inputtype1" type=""> -->
+                <!-- <input id="inputtype2" type=""> -->
+                <button type="submit" class="btn-vertipos" value="type">ver tipos</button>
+
+                <h1>5</h1>
+                <h3>Variable tipo Objeto</h3>
+                <button type="submit" value="object">Ver Objeto</button>
+
+                <h1>6</h1>
+                <h3>Ingrese número para calcular suma de multiplos de 3 y 5</h3>
+                <input type="number" name="" id="numcalculate">
+                <button type="submit" value="numcalculatebtn">Calcular suma</button>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    // funcion para operaciones
+    function SubmitCalc() {
+        var types = document.activeElement.value;
+        switch (types) {
+            case 'math':
+                // llama a funcion para operaciones aritmeticas
+                Aritmetica()
+                break;
+
+            case 'conc':
+                // llama a funcion para concatenar
+                Concatenar()
+                break;
+
+            case 'type':
+                // llama a funcion para tipos de datos
+                TipoDato()
+                break;
+
+            case 'object':
+                // llama a funcion para tipo objeto
+                TipoObjeto()
+                break;
+
+            case 'numcalculatebtn':
+                // llama a funcion para tipo objeto
+                CapturaNum()
+                break;
+            default:
+                break;
+        }
+    }
+
+    // funcion para calculos ARITMETICOS
+    function Aritmetica() {
+        var operation = document.getElementById('op').value
+        var num1 = parseFloat(document.getElementById('num1').value)
+        var num2 = parseFloat(document.getElementById('num2').value)
+        var result = num1 + num2
+        switch (operation) {
+            case 'sum':
+                var result = num1 + num2
+                console.log("La suma es: ", result)
+                break;
+
+            case 'res':
+                var result = num1 - num2
+                console.log("La resta es: ", result)
+                break;
+
+            case 'mul':
+                var result = num1 * num2
+                console.log("La Multiplicación es: ", result)
+                break;
+
+            case 'div':
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                    console.log("La división es:", result);
+                } else {
+                    console.log("No se puede dividir por cero");
+                }
+                break;
+
+            default:
+                console.log("Seleccione una operacion a realizar");
+                break;
+        }
+    }
+
+    // funcion para concatenar
+    function Concatenar() {
+        let text1 = document.getElementById('iput1').value
+        let text2 = document.getElementById('iput2').value
+        console.log("La concatenacion es: ", text1 + text2)
+    }
+
+    // funcion para mostrar tipo de VARIABLE
+    function TipoDato() {
+        // const text1 = document.getElementById('inputtype1').value
+        // const text2 = document.getElementById('inputtype2').value
+
+        const text1 = 18
+        const text2 = "JUAN"
+        console.log("Los tipos de datos son: ", typeof text1, "(", text1, ") y ", typeof text2, "(", text2, ")")
+    }
+
+    // funcion para mostra variable tipo OBJETO
+    function TipoObjeto() {
+        let objeto = [
+            { a: 18 }, { b: "Juan" }, { c: true }, {}
+        ]
+        console.log("Objeto tipado:", typeof objeto)
+        console.log("Objeto cargado:", objeto)
+    }
+
+    function CapturaNum() {
+        let numero = parseInt(document.getElementById('numcalculate').value);
+        let suma = 0
+        if (numero > 0) {
+            if (numero >= 3) {
+                // SumaMultiplos(numero, suma) // TENIENDO EN CUENTA EL 10
+                SumaMultiplos(numero - 1, suma) // NO TOMA EN CUENTA EL 10, INICIA DESDE EL 9
+            } else {
+                console.log("El número no es multiplo de 3, ni de 5")
+            }
+        } else {
+            console.log("El número debe ser positivo y mayor o igual a 3 para calcular")
+        }
+    }
+
+    function SumaMultiplos(numero, suma) {
+        if (numero % 3 === 0 || numero % 5 === 0) {
+            console.log("multiplo de 3 o 5", numero)
+            suma += numero
+        }
+        if (numero >= 3) {
+            SumaMultiplos(numero - 1, suma)
+
+        } else {
+            console.log("La suma de los multiplos de 5 y de 3 es: ", suma)
+        }
+    }
+</script>
