@@ -1,0 +1,126 @@
+*{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-size: 16px; */
+}
+
+
+#divbtn{
+    margin: 20px;
+    /* border: 20px; */
+    padding: 10px;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    border-radius: 5px ;
+    border: none;
+    padding: 4px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(6, 145, 237);
+    cursor: pointer;
+    font-size: 15px;
+}
+.btn:hover{
+    background-color: rgb(16, 136, 216);
+}
+.btn:active{
+    background-color: rgb(2, 117, 194);
+}
+
+.deletebtn{
+    border-radius: 4px ;
+    border: none;
+    padding: 8px;
+    color: white;
+    background-color: rgb(24, 144, 224);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.deletebtn:hover{
+    background-color: rgb(16, 136, 216);
+}
+
+.deletebtn:active{
+    background-color: rgb(2, 117, 194);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.div-form{
+    /* margin: 5%; */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 30px;
+    /* border: 2px solid blueviolet; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    background-color: rgb(255, 229, 156);
+    box-shadow: 0 1px 10px 5px rgba(61, 3, 3, 0.2);
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+.div-text{
+    display: flex;
+    justify-content: center;
+    /* font-size: 30px; */
+}
+
+.div-input{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* font-size: 30px; */
+}
+
+
+.container-divJS{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 15px;
+    padding: 10px;
+}
+
+.div-card{
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0px 1px 15px 1px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-size: 28px;
+}
+
+.div-card:hover{
+    cursor: pointer;
+    box-shadow: 0px 1px 20px 6px rgba(103, 1, 1, 0.2);
+}
