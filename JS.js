@@ -14,7 +14,7 @@ function CalculaFibonacci() {
         var resultado = Fibonacci(numero);
         // alert("La serie de Fibonacci hasta " + numero + " es: " + resultado);
     } else {
-        alert("El número debe ser positivo")
+        alert("El número debe ser positivo o mayor que 0")
     }
 }
 
